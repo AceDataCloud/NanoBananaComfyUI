@@ -1,0 +1,21 @@
+[project]
+name = "nano-banana"
+version = "0.1.0"
+description = "Nano Banana generation, editing, task lookup, and image loading through Ace Data Cloud"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31,<3"]
+classifiers = ["Operating System :: OS Independent"]
+
+[project.urls]
+Repository = "https://github.com/AceDataCloud/NanoBananaComfyUI"
+Documentation = "https://github.com/AceDataCloud/NanoBananaComfyUI#readme"
+"Bug Tracker" = "https://github.com/AceDataCloud/NanoBananaComfyUI/issues"
+
+[tool.comfy]
+PublisherId = "acedatacloud"
+DisplayName = "Nano Banana by Ace Data Cloud"
+Icon = "https://raw.githubusercontent.com/AceDataCloud/NanoBananaComfyUI/main/assets/logo-400.png"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

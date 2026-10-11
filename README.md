@@ -1,2 +1,77 @@
-# NanoBananaComfyUI
-Nano Banana image generation and editing nodes for ComfyUI via Ace Data Cloud
+# Nano Banana for ComfyUI by Ace Data Cloud
+
+Generate or edit images with Nano Banana, retrieve the **same task ID**, and load the completed image into ComfyUI's standard `IMAGE` type. These nodes call a hosted Ace Data Cloud API; no local model or GPU is needed. Generation and editing consume Ace Data Cloud Credits at the [current service price](https://platform.acedata.cloud/models).
+
+[简体中文](docs/README.zh-CN.md) · [Ace Data Cloud](https://platform.acedata.cloud) · [Issues](https://github.com/AceDataCloud/NanoBananaComfyUI/issues)
+
+| Node | Purpose |
+| --- | --- |
+| **Nano Banana Generate Image** | Submit one paid text-to-image task |
+| **Nano Banana Edit Image** | Submit one paid edit using public HTTPS reference image URLs |
+| **Nano Banana Retrieve Task** | Query or wait for the same task ID |
+| **Nano Banana Retrieve Tasks** | Read multiple existing task IDs without new generation |
+| **Nano Banana Load Image / Load Images** | Decode one result URL or a URL array into ComfyUI `IMAGE` |
+
+The package offers all nine model IDs currently listed by the [Ace Data Cloud Dify Nano Banana plugin](https://github.com/AceDataCloud/NanoBananaDify):
+
+`nano-banana`, `nano-banana-2-lite`, `nano-banana-2`, `nano-banana-2.1`, `nano-banana-pro`, `nano-banana:official`, `nano-banana-2-lite:official`, `nano-banana-2:official`, and `nano-banana-pro:official`.
+
+Model availability, resolution limits, and pricing can differ. Check the current service documentation before a paid run. `nano-banana` and `nano-banana-2-lite` support only `1K`; choose a model that supports `2K` or `4K` when requesting those sizes. A count of 1–4 is available; the Load Images node returns a batch when the output images have matching dimensions.
+
+## Install
+
+When the Registry version is active, open **ComfyUI-Manager → Custom Nodes**, search **Nano Banana**, confirm publisher **acedatacloud** and package **Nano Banana by Ace Data Cloud**, then install and restart ComfyUI. The planned Registry ID is `nano-banana`; the source repository is `AceDataCloud/NanoBananaComfyUI`. Source availability does not prove Registry or Manager discoverability.
+
+For local source testing:
+
+```bash
+cd /path/to/ComfyUI/custom_nodes
+git clone https://github.com/AceDataCloud/NanoBananaComfyUI.git
+cd NanoBananaComfyUI
+python -m pip install -r requirements.txt
+```
+
+Restart ComfyUI and search the node picker for **Nano Banana**. The package uses ComfyUI's existing PyTorch, NumPy, and Pillow installation for image decoding.
+
+## Set your Ace Data Cloud key
+
+Use an application key with Nano Banana access. Set it in the **ComfyUI process environment** and restart:
+
+```bash
+export ACEDATACLOUD_API_KEY='paste-your-key-here'
+python main.py --cpu
+```
+
+`ACEDATACLOUD_API_TOKEN` is also accepted. Keep the key out of workflows, screenshots, issues, and the repository. If you restrict API paths, allow `/nano-banana/images` and `/nano-banana/tasks`.
+
+## Generate and retrieve
+
+Import [01-submit-nano-banana.json](examples/01-submit-nano-banana.json) with **File → Open**, choose a model and price, then run it once. Copy the task ID from Preview as Text. A submitted task is not a completed image. If submission times out without a task ID, check Ace request history before paying for another generation.
+
+Import [02-retrieve-and-preview.json](examples/02-retrieve-and-preview.json), replace the placeholder task ID, and run it. It connects **Retrieve Task → Load Images → Preview Image**. Retrieve waits up to 240 seconds for the same ID. If still pending, rerun **only** the retrieve workflow. A finished task supplies image URLs; Load Images decodes them into a normal ComfyUI image batch.
+
+For editing, import [03-edit-nano-banana.json](examples/03-edit-nano-banana.json) and replace its placeholder source URL with a public HTTPS reference image. You can also enter a JSON array or one URL per line. It uses the same `/nano-banana/images` endpoint with `action: edit`. Reuse the retrieval workflow for the returned task ID. Reference images are submitted to Ace Data Cloud for processing.
+
+## Check usage and troubleshoot
+
+Check the submitted task or trace ID in the [Ace Data Cloud Console](https://platform.acedata.cloud/console/applications). Read-only task queries and media downloads should not create another generation.
+
+| Symptom | Action |
+| --- | --- |
+| Key missing | Put `ACEDATACLOUD_API_KEY` in the actual ComfyUI process environment, then restart. |
+| HTTP 401/403 | Check key validity, service access, path restrictions, and content policy. |
+| HTTP 429 | Wait for the service limit; keep any accepted task ID. |
+| Pending | Query the same task ID again, without rerunning Generate or Edit. |
+| Submission timeout or HTTP 5xx | Inspect request history before resubmitting; the paid task may have been accepted. |
+| Image download error | Confirm the task succeeded and its Ace media URL is available. |
+
+The nodes send prompts and reference URLs to `api.acedata.cloud`; completed images are downloaded from Ace CDN. See [privacy notes](docs/PRIVACY.md). Only submit content you have permission to process.
+
+## Development
+
+```bash
+python -m unittest discover -s tests -v
+python -m py_compile __init__.py client.py nodes.py
+```
+
+`pyproject.toml` declares the short Registry ID `nano-banana`, publisher `acedatacloud`, and a 400×400 proportional resize of the [canonical Ace logo](https://cdn.acedata.cloud/assets/logo.png).
