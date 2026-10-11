@@ -1,0 +1,32 @@
+{
+  "tested_at": "2026-10-12",
+  "environment": "isolated ComfyUI 0.39.0 / Python 3.11.17 / CPU / local source installation",
+  "node_registration": {
+    "count": 6,
+    "model_choices": 9,
+    "has_nano_banana_2_1": true
+  },
+  "workflow_imports": [
+    "01-submit-nano-banana.json",
+    "02-retrieve-and-preview.json",
+    "03-edit-nano-banana.json"
+  ],
+  "read_only_task_reuse": {
+    "source": "existing NanoBananaDify E2E task; no new paid generation",
+    "task_id": "c9cf9312-12dd-4cd9-ac6c-3e63fcc5a964",
+    "task_status": "succeeded",
+    "media_host": "cdn.acedata2.cloud",
+    "comfy_prompt_id": "50d0f19f-9b1e-4125-ae6d-028303b4892a",
+    "comfy_status": "success",
+    "browser_ui_prompt_id": "13ffcc5f-9acc-4f5a-8f8e-af974b1cd0c3",
+    "browser_ui_status": "succeeded with visible Preview Image",
+    "preview_image_count": 1,
+    "preview_format": "PNG",
+    "preview_dimensions": [1024, 1024]
+  },
+  "new_generation_tested": false,
+  "new_edit_tested": false,
+  "registry_published": false,
+  "manager_installed": false,
+  "billing_readback_tested": false
+}
