@@ -1,8 +1,8 @@
 # Nano Banana for ComfyUI by Ace Data Cloud
 
-Generate or edit images with Nano Banana, retrieve the **same task ID**, and load the completed image into ComfyUI's standard `IMAGE` type. These nodes call a hosted Ace Data Cloud API; no local model or GPU is needed. Generation and editing consume Ace Data Cloud Credits at the [current service price](https://platform.acedata.cloud/models).
+Generate or edit images with Nano Banana, retrieve the **same task ID**, and load the completed image into ComfyUI's standard `IMAGE` type. These nodes call a hosted Ace Data Cloud API; no local model or GPU is needed. Generation and editing consume Ace Data Cloud Credits at the [current service price](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_en_pricing).
 
-[简体中文](docs/README.zh-CN.md) · [Ace Data Cloud](https://platform.acedata.cloud) · [Issues](https://github.com/AceDataCloud/NanoBananaComfyUI/issues)
+[简体中文](docs/README.zh-CN.md) · [Ace Data Cloud](https://platform.acedata.cloud?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_en_home) · [Issues](https://github.com/AceDataCloud/NanoBananaComfyUI/issues)
 
 | Node | Purpose |
 | --- | --- |
@@ -35,6 +35,10 @@ Restart ComfyUI and search the node picker for **Nano Banana**. The package uses
 
 ## Set your Ace Data Cloud key
 
+1. Sign in to [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_en_api_key). If your account has no General application, choose **Initialize General Application**.
+2. Open **General application** and check access to the service used by this package. A service-specific application key is limited to that service. Copy an existing API key, or choose **Manage Keys → Create** for a separate key named `ComfyUI`.
+3. Copy only the token string, without `Bearer ` or quotation marks. A platform management token is not the API key these nodes use. If you enable **Allowed APIs**, include every submission and task-query path used by your workflow. Check current pricing and available Credits before a paid action.
+
 Use an application key with Nano Banana access. Set it in the **ComfyUI process environment** and restart:
 
 ```bash
@@ -54,7 +58,7 @@ For editing, import [03-edit-nano-banana.json](examples/03-edit-nano-banana.json
 
 ## Check usage and troubleshoot
 
-Check the submitted task or trace ID in the [Ace Data Cloud Console](https://platform.acedata.cloud/console/applications). Read-only task queries and media downloads should not create another generation.
+Check the submitted task or trace ID in the [Ace Data Cloud Console](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_en_api_key). Read-only task queries and media downloads should not create another generation.
 
 | Symptom | Action |
 | --- | --- |
