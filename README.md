@@ -20,9 +20,11 @@ Model availability, resolution limits, and pricing can differ. Check the current
 
 ## Install
 
-When the Registry version is active, open **ComfyUI-Manager → Custom Nodes**, search **Nano Banana**, confirm publisher **acedatacloud** and package **Nano Banana by Ace Data Cloud**, then install and restart ComfyUI. The planned Registry ID is `nano-banana`; the source repository is `AceDataCloud/NanoBananaComfyUI`. Source availability does not prove Registry or Manager discoverability.
+Open **Manager → Custom Nodes Manager** and search **Ace Data Cloud**. Select **Nano Banana by Ace Data Cloud**, confirm publisher **acedatacloud** and source repository [`AceDataCloud/NanoBananaComfyUI`](https://github.com/AceDataCloud/NanoBananaComfyUI), then click **Install**. In **Select Version**, explicitly select the approved Registry stable release **0.1.0**. The normal dialog may initially highlight **nightly**; do not accept it for this stable-release tutorial. Keep dependency installation enabled. After **Restart Required**, restart ComfyUI and refresh the browser. Registry ID: `nano-banana`.
 
-For local source testing:
+This Registry stable installation was verified on **2026-10-16 with original ComfyUI 0.41.0 on Linux CPU**. That test did not submit a generation or chat request. Newer host versions and each paid action require their own checks; model availability and price remain subject to the current service rules.
+
+For optional local source testing:
 
 ```bash
 cd /path/to/ComfyUI/custom_nodes

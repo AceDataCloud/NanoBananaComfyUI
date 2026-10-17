@@ -14,7 +14,9 @@
 
 ## 安装与密钥
 
-Registry 版本激活后，在 ComfyUI-Manager 搜索 **Nano Banana**，核对 publisher 为 `acedatacloud`、包名为 **Nano Banana by Ace Data Cloud** 后安装并重启。发布前可在 ComfyUI 的 `custom_nodes` 目录克隆本仓库，并运行 `python -m pip install -r requirements.txt` 测试源码。
+打开 **Manager → Custom Nodes Manager**，搜索 **Ace Data Cloud**，选择 **Nano Banana by Ace Data Cloud**，核对发布者 **acedatacloud** 和源码仓库 [`AceDataCloud/NanoBananaComfyUI`](https://github.com/AceDataCloud/NanoBananaComfyUI)，再点击 **Install**。在 **Select Version** 版本对话框明确选择已批准的 Registry 稳定版 **0.1.0**；普通对话框可能默认高亮 **nightly**，本教程不要直接接受该选项。保留依赖自动安装。出现 **Restart Required** 后重启 ComfyUI，并刷新浏览器。Registry ID 为 `nano-banana`。
+
+这条 Registry 稳定版安装路径已于 **2026-10-16 在原版 Linux CPU ComfyUI 0.41.0** 验证；该次安装验收没有提交生成或聊天请求。更新的宿主版本及每个收费动作仍需分别验证，模型可用性与价格以当前服务规则为准。
 
 在**运行 ComfyUI 的进程环境**设置 `ACEDATACLOUD_API_KEY`，然后重启。也接受 `ACEDATACLOUD_API_TOKEN`。密钥不可写入工作流 JSON、仓库、截图或 issue。若启用 API 路径限制，请放行 `/nano-banana/images` 和 `/nano-banana/tasks`。
 
