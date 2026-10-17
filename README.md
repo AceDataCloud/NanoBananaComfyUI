@@ -1,8 +1,8 @@
 # Nano Banana for ComfyUI by Ace Data Cloud
 
-Generate or edit images with Nano Banana, retrieve the **same task ID**, and load the completed image into ComfyUI's standard `IMAGE` type. These nodes call a hosted Ace Data Cloud API; no local model or GPU is needed. Generation and editing consume Ace Data Cloud Credits at the [current service price](https://platform.acedata.cloud/models).
+Generate or edit images with Nano Banana, retrieve the **same task ID**, and load the completed image into ComfyUI's standard `IMAGE` type. These nodes call a hosted Ace Data Cloud API; no local model or GPU is needed. Generation and editing consume Ace Data Cloud Credits at the [current service price](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_en_pricing).
 
-[简体中文](docs/README.zh-CN.md) · [Ace Data Cloud](https://platform.acedata.cloud) · [Issues](https://github.com/AceDataCloud/NanoBananaComfyUI/issues)
+[简体中文](docs/README.zh-CN.md) · [Ace Data Cloud](https://platform.acedata.cloud?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_en_home) · [Issues](https://github.com/AceDataCloud/NanoBananaComfyUI/issues)
 
 | Node | Purpose |
 | --- | --- |
@@ -20,9 +20,11 @@ Model availability, resolution limits, and pricing can differ. Check the current
 
 ## Install
 
-When the Registry version is active, open **ComfyUI-Manager → Custom Nodes**, search **Nano Banana**, confirm publisher **acedatacloud** and package **Nano Banana by Ace Data Cloud**, then install and restart ComfyUI. The planned Registry ID is `nano-banana`; the source repository is `AceDataCloud/NanoBananaComfyUI`. Source availability does not prove Registry or Manager discoverability.
+Open **Manager → Custom Nodes Manager** and search **Ace Data Cloud**. Select **Nano Banana by Ace Data Cloud**, confirm publisher **acedatacloud** and source repository [`AceDataCloud/NanoBananaComfyUI`](https://github.com/AceDataCloud/NanoBananaComfyUI), then click **Install**. In **Select Version**, explicitly select the approved Registry stable release **0.1.0**. The normal dialog may initially highlight **nightly**; do not accept it for this stable-release tutorial. Keep dependency installation enabled. After **Restart Required**, restart ComfyUI and refresh the browser. Registry ID: `nano-banana`.
 
-For local source testing:
+This Registry stable installation was verified on **2026-10-16 with original ComfyUI 0.41.0 on Linux CPU**. That test did not submit a generation or chat request. Newer host versions and each paid action require their own checks; model availability and price remain subject to the current service rules.
+
+For optional local source testing:
 
 ```bash
 cd /path/to/ComfyUI/custom_nodes
@@ -34,6 +36,10 @@ python -m pip install -r requirements.txt
 Restart ComfyUI and search the node picker for **Nano Banana**. The package uses ComfyUI's existing PyTorch, NumPy, and Pillow installation for image decoding.
 
 ## Set your Ace Data Cloud key
+
+1. Sign in to [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_en_api_key). If your account has no General application, choose **Initialize General Application**.
+2. Open **General application** and check access to the service used by this package. A service-specific application key is limited to that service. Copy an existing API key, or choose **Manage Keys → Create** for a separate key named `ComfyUI`.
+3. Copy only the token string, without `Bearer ` or quotation marks. A platform management token is not the API key these nodes use. If you enable **Allowed APIs**, include every submission and task-query path used by your workflow. Check current pricing and available Credits before a paid action.
 
 Use an application key with Nano Banana access. Set it in the **ComfyUI process environment** and restart:
 
@@ -54,7 +60,7 @@ For editing, import [03-edit-nano-banana.json](examples/03-edit-nano-banana.json
 
 ## Check usage and troubleshoot
 
-Check the submitted task or trace ID in the [Ace Data Cloud Console](https://platform.acedata.cloud/console/applications). Read-only task queries and media downloads should not create another generation.
+Check the submitted task or trace ID in the [Ace Data Cloud Console](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_en_api_key). Read-only task queries and media downloads should not create another generation.
 
 | Symptom | Action |
 | --- | --- |
