@@ -1,0 +1,39 @@
+{
+  "package": "nano-banana",
+  "files": [
+    {
+      "file": "docs/images/manager-discovery.png",
+      "source_url": "https://github.com/AceDataCloud/Index/actions/runs/38862058594",
+      "date": "2026-10-16",
+      "limits": "Original Linux ComfyUI 0.41.0 Manager brand-search screenshot. Service-only search was checked by public Registry API on 2026-10-18, not by this screenshot.",
+      "edits": "none; copied original bytes",
+      "sha256": "4bf5e6c2285431338a27cb1fac32156104fe89d333935bf4e6ab5641af61d5d6"
+    },
+    {
+      "file": "docs/images/manager-installed.png",
+      "source_url": "https://github.com/AceDataCloud/Index/actions/runs/38862058594",
+      "date": "2026-10-16",
+      "limits": "Original Manager post-restart enabled state in a sequential brand-search test; other packages may be visible. It does not show a new generation, bill or customer use.",
+      "edits": "none; copied original bytes",
+      "sha256": "be29c2461a344f63b8031638cbd23133ba543846ea8466d54f9313088dd5f83b"
+    },
+    {
+      "file": "docs/images/get-api-key-en.png",
+      "source_url": "https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/get-api-key-en.png",
+      "date": "2026-10-08",
+      "limits": "Existing Ace Applications screenshot reused from SunoDify. Key, balance and application ID were masked before capture. No credentials are shown or created here.",
+      "edits": "none; copied original bytes",
+      "sha256": "b63787f2bd15af82fef9ab61c99e11c454355ac86e91f7f94559386b795069b7"
+    },
+    {
+      "file": "docs/images/create-api-key-en.png",
+      "source_url": "https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/create-api-key-en.png",
+      "date": "2026-10-08",
+      "limits": "Existing cancelled Create Key dialog screenshot. The sample name says Dify tutorial; choose ComfyUI instead. It is not a ComfyUI secret-entry UI.",
+      "edits": "none; copied original bytes",
+      "sha256": "977c06780b36ca33f2fb3ba546e2594efe5895400e4cb58d842eb564c3bb09da"
+    }
+  ],
+  "privacy": "Never include API keys in workflows, screenshots or issue reports.",
+  "new_api_calls": 0
+}
