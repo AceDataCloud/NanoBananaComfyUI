@@ -18,6 +18,13 @@ The package offers all nine model IDs currently listed by the [Ace Data Cloud Di
 
 Model availability, resolution limits, and pricing can differ. Check the current service documentation before a paid run. `nano-banana` and `nano-banana-2-lite` support only `1K`; choose a model that supports `2K` or `4K` when requesting those sizes. A count of 1–4 is available; the Load Images node returns a batch when the output images have matching dimensions.
 
+
+## Current version and install source
+
+This source version is **0.1.1**. Check [GitHub Releases](https://github.com/AceDataCloud/NanoBananaComfyUI/releases) for its versioned ZIP. The Registry section below retains the last verified **Active 0.1.0 on 2026-10-19**; that older ZIP does not contain this release's updated guide, examples or fixes. To use this version, install its GitHub Release ZIP, or select the exact **0.1.1** Registry release once it becomes Active. Do not substitute the initial nightly selection for a verified stable release.
+
+To install the GitHub ZIP, stop ComfyUI and back up any existing node directory. Extract the ZIP contents into `ComfyUI/custom_nodes/nano-banana/` without adding an extra nested directory, run `python -m pip install -r requirements.txt` there, then restart and refresh. Keep the API Token in the actual launch-process environment. A GitHub ZIP install is separate from a verified Registry/Manager stable installation.
+
 ## Install
 
 Open the official [Nano Banana by Ace Data Cloud Registry page](https://registry.comfy.org/nodes/nano-banana), or open **Manager → Custom Nodes Manager** and search **Nano Banana**. Use **Ace Data Cloud** as a fallback to find this publisher’s packages. Select **Nano Banana by Ace Data Cloud**, confirm publisher **acedatacloud** and source repository [`AceDataCloud/NanoBananaComfyUI`](https://github.com/AceDataCloud/NanoBananaComfyUI), then click **Install**. In **Select Version**, explicitly select the approved Registry stable release **0.1.0**. The normal dialog may initially highlight **nightly**; do not accept it for this stable-release tutorial. Keep dependency installation enabled. After **Restart Required**, restart ComfyUI and refresh the browser. Registry ID: `nano-banana`.

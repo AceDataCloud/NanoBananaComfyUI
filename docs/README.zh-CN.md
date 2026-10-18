@@ -6,6 +6,13 @@
 
 节点包括生成、编辑、单任务查询、批量任务查询、单图加载和多图批量加载。生成和编辑只提交一次收费请求；查询及下载不会重新生成。包覆盖 Dify Nano Banana 插件目前列出的 9 个模型 ID：`nano-banana`、`nano-banana-2-lite`、`nano-banana-2`、`nano-banana-2.1`、`nano-banana-pro` 及除 `2.1` 外上述四种模型的 `:official` 版本。不同模型的价格与分辨率能力可能不同；`nano-banana` 和 `nano-banana-2-lite` 只支持 `1K`。
 
+
+## 当前版本与安装来源
+
+本源码版本为 **0.1.1**，版本 ZIP 见 [GitHub Releases](https://github.com/AceDataCloud/NanoBananaComfyUI/releases)。下文 Registry 安装段保留 **2026-10-19 已核 Active 的 0.1.0**；该旧 ZIP 尚不包含本版更新的图文、示例或修复。需要本版时，使用对应 GitHub Release ZIP，或等 Registry 中准确的 **0.1.1** 变为 Active 后再手选该版本；不要用默认 nightly 代替已核 stable。
+
+从 GitHub ZIP 安装：停止 ComfyUI，先备份已有同名节点目录，把 ZIP 内文件解压到 `ComfyUI/custom_nodes/nano-banana/`（不要多嵌套一层目录），在该目录运行 `python -m pip install -r requirements.txt`，然后重启并刷新。API Token 仍只配在实际启动进程环境中。GitHub ZIP 安装与 Registry/Manager 正式稳定版安装是不同路径。
+
 ## 安装与密钥
 
 ## 官方安装
