@@ -9,7 +9,7 @@
 
 ## 当前版本与安装来源
 
-本源码版本为 **0.1.1**，版本 ZIP 见 [GitHub Releases](https://github.com/AceDataCloud/NanoBananaComfyUI/releases)。下文 Registry 安装段保留 **2026-10-19 已核 Active 的 0.1.0**；该旧 ZIP 尚不包含本版更新的图文、示例或修复。需要本版时，使用对应 GitHub Release ZIP，或等 Registry 中准确的 **0.1.1** 变为 Active 后再手选该版本；不要用默认 nightly 代替已核 stable。
+本源码版本为 **0.1.2**，版本 ZIP 见 [GitHub Releases](https://github.com/AceDataCloud/NanoBananaComfyUI/releases)。下文 Registry 安装段保留 **2026-10-19 已核 Active 的 0.1.0**；该旧 ZIP 尚不包含本版更新的图文、示例或修复。需要本版时，使用对应 GitHub Release ZIP，或等 Registry 中准确的 **0.1.2** 变为 Active 后再手选该版本；不要用默认 nightly 代替已核 stable。
 
 从 GitHub ZIP 安装：停止 ComfyUI，先备份已有同名节点目录，把 ZIP 内文件解压到 `ComfyUI/custom_nodes/nano-banana/`（不要多嵌套一层目录），在该目录运行 `python -m pip install -r requirements.txt`，然后重启并刷新。API Token 仍只配在实际启动进程环境中。GitHub ZIP 安装与 Registry/Manager 正式稳定版安装是不同路径。
 
@@ -52,3 +52,5 @@ Ace 应用页与其他集成共用：图中 **1** 复制已有 Token，**2** 打
 3. 编辑图片时，导入[编辑工作流](../examples/03-edit-nano-banana.json)，把占位地址改成公开 HTTPS 参考图 URL；可以一行一个，也可以填 JSON 数组。编辑仍走 `/nano-banana/images`，`action` 为 `edit`。拿到任务 ID 后复用查询工作流。
 
 在[控制台](https://platform.acedata.cloud/console/applications?utm_source=comfyui&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_zh_cn_api_key)按任务或 trace ID 核对 Credits 记录。HTTP 401/403 检查密钥和服务权限；429 等待限流；提交超时或 5xx 先核对历史，避免重复扣费。插件会把提示词和参考图 URL 发送给 Ace Data Cloud，完成后从 Ace CDN 下载图片。只提交有权处理的内容，详见[隐私说明](PRIVACY.md)。
+
+查询节点每次队列执行都会重新读取同一任务，不复用旧pending结果；收费提交在输入不变时仍保留缓存，避免查询时重发收费生成。导入或运行工作流前先关闭自动队列/自动运行，提交图只明确运行一次。

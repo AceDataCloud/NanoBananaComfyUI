@@ -21,7 +21,7 @@ Model availability, resolution limits, and pricing can differ. Check the current
 
 ## Current version and install source
 
-This source version is **0.1.1**. Check [GitHub Releases](https://github.com/AceDataCloud/NanoBananaComfyUI/releases) for its versioned ZIP. The Registry section below retains the last verified **Active 0.1.0 on 2026-10-19**; that older ZIP does not contain this release's updated guide, examples or fixes. To use this version, install its GitHub Release ZIP, or select the exact **0.1.1** Registry release once it becomes Active. Do not substitute the initial nightly selection for a verified stable release.
+This source version is **0.1.2**. Check [GitHub Releases](https://github.com/AceDataCloud/NanoBananaComfyUI/releases) for its versioned ZIP. The Registry section below retains the last verified **Active 0.1.0 on 2026-10-19**; that older ZIP does not contain this release's updated guide, examples or fixes. To use this version, install its GitHub Release ZIP, or select the exact **0.1.2** Registry release once it becomes Active. Do not substitute the initial nightly selection for a verified stable release.
 
 To install the GitHub ZIP, stop ComfyUI and back up any existing node directory. Extract the ZIP contents into `ComfyUI/custom_nodes/nano-banana/` without adding an extra nested directory, run `python -m pip install -r requirements.txt` there, then restart and refresh. Keep the API Token in the actual launch-process environment. A GitHub ZIP install is separate from a verified Registry/Manager stable installation.
 
@@ -104,3 +104,5 @@ python -m py_compile __init__.py client.py nodes.py
 ```
 
 `pyproject.toml` declares the short Registry ID `nano-banana`, publisher `acedatacloud`, and a 400×400 proportional resize of the [canonical Ace logo](https://cdn.acedata.cloud/assets/logo.png).
+
+Task lookup nodes refresh the same task on every queued execution rather than reusing a cached pending result. Paid submissions retain stable caching when inputs are unchanged, so refreshing a query does not resubmit generation. Disable auto-queue/auto-run before importing or running these workflows, and explicitly submit once.
