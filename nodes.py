@@ -30,6 +30,13 @@ def _submission(result):
             "result": (status, task_id, json.dumps(urls), trace_id)}
 
 
+
+class _FreshTaskLookup:
+    @classmethod
+    def IS_CHANGED(cls, **kwargs):
+        # Task state changes remotely even when this graph's inputs do not.
+        return float('nan')
+
 class AceNanoBananaGenerate:
     @classmethod
     def INPUT_TYPES(cls):
@@ -77,7 +84,7 @@ class AceNanoBananaEdit:
                                 reference_image_urls))
 
 
-class AceNanoBananaRetrieve:
+class AceNanoBananaRetrieve(_FreshTaskLookup):
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {
@@ -99,7 +106,7 @@ class AceNanoBananaRetrieve:
                 "result": (status, task_id, json.dumps(urls), urls[0] if urls else "", trace_id)}
 
 
-class AceNanoBananaRetrieveBatch:
+class AceNanoBananaRetrieveBatch(_FreshTaskLookup):
     @classmethod
     def INPUT_TYPES(cls):
         return {"required": {"task_ids_json": ("STRING", {"multiline": True, "default": "[]"})}}

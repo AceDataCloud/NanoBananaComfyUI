@@ -1,6 +1,6 @@
 [project]
 name = "nano-banana"
-version = "0.1.1"
+version = "0.1.2"
 description = "Nano Banana generation, editing, task lookup, and image loading through Ace Data Cloud"
 license = { file = "LICENSE" }
 requires-python = ">=3.10"
