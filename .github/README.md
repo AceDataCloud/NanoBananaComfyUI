@@ -54,7 +54,7 @@ Restart ComfyUI and search the node picker for **Nano Banana**. The package uses
 
 ### Copy or create your own API Token
 
-The Applications screen is shared across Ace integrations. **1** copies the existing token; **2** opens **Manage Keys**, then **Create**. A new account signs in/registers and initializes **General application** first. Verify this service's access, current price, balance and any expiry/Allowed APIs restrictions.
+On the **General Application** card, **1** copies the key beside **API KEY**. For a separate key, click **Manage Keys** (**2**), then **Create**. Verify this service's access, current price, balance and any expiry/Allowed APIs restrictions.
 
 ![Ace Applications: copy token or open Manage Keys](../docs/images/get-api-key-en.png)
 
@@ -62,9 +62,9 @@ The Applications screen is shared across Ace integrations. **1** copies the exis
 
 These masked **2026-10-08** Ace Console screenshots are reused from SunoDify. The example credential name in the second image is `Dify tutorial`; name yours `ComfyUI`. No credential was created by this guide update. Paste only the token into **the environment of the process that launches ComfyUI** (`ACEDATACLOUD_API_KEY`), then restart. There is no ComfyUI API Key textbox in these nodes; do not paste it into prompt/JSON widgets or the workflow file. An unrelated terminal export does not configure an already-running Desktop process.
 
-1. Sign in to [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_en_api_key). If your account has no General application, choose **Initialize General Application**.
-2. Open **General application** and check access to the service used by this package. A service-specific application key is limited to that service. Copy an existing API key, or choose **Manage Keys → Create** for a separate key named `ComfyUI`.
-3. Copy only the token string, without `Bearer ` or quotation marks. A platform management token is not the API key these nodes use. If you enable **Allowed APIs**, include every submission and task-query path used by your workflow. Check current pricing and available Credits before a paid action.
+1. Sign in to [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_en_api_key). The page prepares the **General Application** card automatically.
+2. Check that your application has access to this service. A service-specific key is limited to that service. Click the copy button beside **API KEY**, or choose **Manage Keys → Create** for a separate key named `ComfyUI`.
+3. Copy only the token string, without `Bearer ` or quotation marks. A platform management token is not the API key these nodes use. If you enable **Allowed APIs**, include every submission and task-query path used by your workflow. Check current pricing before a paid action. If the application balance is low, click **Top Up** on its card.
 
 Use an application key with Nano Banana access. Set it in the **ComfyUI process environment** and restart:
 
