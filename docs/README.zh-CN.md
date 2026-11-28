@@ -31,7 +31,7 @@
 
 ### 复制或创建自己的 API Token
 
-Ace 应用页与其他集成共用：图中 **1** 复制已有 Token，**2** 打开**管理 Key**，再选**创建**。新账户先注册/登录并初始化**通用应用**；确认本服务权限、当前价格、余额、有效期和允许的 API 限制。
+在**通用应用**卡片上，图中 **1** 是 **API KEY** 旁的复制按钮。如需独立密钥，点击**管理密钥**（**2**），再选**创建**。确认本服务权限、当前价格、余额、有效期和允许的 API 限制。
 
 ![Ace 应用页：复制 Token 或管理 Key](images/get-api-key-en.png)
 
@@ -39,9 +39,9 @@ Ace 应用页与其他集成共用：图中 **1** 复制已有 Token，**2** 打
 
 以上是 **2026-10-08** 的真实脱敏 Ace 控制台原图，复用自 SunoDify；第二图示例名为 `Dify tutorial`，此处请命名为 `ComfyUI`。本次未创建凭据。Token 只配在**启动 ComfyUI 的进程环境变量** `ACEDATACLOUD_API_KEY` 中并重启；节点没有图示的 Key 输入框，不要贴进提示词、JSON 参数或工作流文件。其他终端的 export 不会配置已经运行的 Desktop 进程。
 
-1. 登录 [Ace Data Cloud → 应用](https://platform.acedata.cloud/console/applications?utm_source=comfyui&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_zh_cn_api_key)。新账户没有通用应用时，先选择**初始化通用应用**。
-2. 打开**通用应用**，确认已开通本节点使用的服务。单服务应用的 Key 只限该服务。可复制已有 API Key；需要独立 Key 时，选择**管理 Key → 创建**，命名为 `ComfyUI`。
-3. 只复制 Token 字符串，不加 `Bearer ` 或引号。平台管理 Token 不能代替节点调用 API 的 Key。若启用**允许的 API**限制，需同时包含工作流用到的提交和任务查询路径；收费动作前核对当前价格与 Credits 余额。
+1. 登录 [Ace Data Cloud → 应用](https://platform.acedata.cloud/console/applications?utm_source=comfyui&utm_medium=referral&utm_campaign=evergreen&utm_content=nanobananacomfyui_readme_zh_cn_api_key)。页面会自动准备好**通用应用**卡片。
+2. 确认应用已开通本节点使用的服务，单服务应用的 Key 只限该服务。点击 **API KEY** 旁的复制按钮。需要独立 Key 时，选择**管理 Key → 创建**，命名为 `ComfyUI`。
+3. 只复制 Token 字符串，不加 `Bearer ` 或引号。平台管理 Token 不能代替节点调用 API 的 Key。若启用**允许的 API**限制，需同时包含工作流用到的提交和任务查询路径；付费操作前先核对当前价格。应用余额不足时，点击该应用卡片上的**充值**。
 
 在**运行 ComfyUI 的进程环境**设置 `ACEDATACLOUD_API_KEY`，然后重启。也接受 `ACEDATACLOUD_API_TOKEN`。密钥不可写入工作流 JSON、仓库、截图或 issue。若启用 API 路径限制，请放行 `/nano-banana/images` 和 `/nano-banana/tasks`。
 
