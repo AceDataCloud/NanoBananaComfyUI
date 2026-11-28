@@ -9,7 +9,7 @@
 
 ## 当前版本与安装来源
 
-本源码版本为 **0.1.2**，版本 ZIP 见 [GitHub Releases](https://github.com/AceDataCloud/NanoBananaComfyUI/releases)。下文 Registry 安装段保留 **2026-10-19 已核 Active 的 0.1.0**；该旧 ZIP 尚不包含本版更新的图文、示例或修复。需要本版时，使用对应 GitHub Release ZIP，或等 Registry 中准确的 **0.1.2** 变为 Active 后再手选该版本；不要用默认 nightly 代替已核 stable。
+本源码版本为 **0.1.3**，版本 ZIP 见 [GitHub Releases](https://github.com/AceDataCloud/NanoBananaComfyUI/releases)。下文 Registry 安装段保留 **2026-10-19 已核 Active 的 0.1.0**；该旧 ZIP 尚不包含本版更新的图文、示例或修复。需要本版时，使用对应 GitHub Release ZIP，或等 Registry 中准确的 **0.1.3** 变为 Active 后再手选该版本；不要用默认 nightly 代替已核 stable。
 
 从 GitHub ZIP 安装：停止 ComfyUI，先备份已有同名节点目录，把 ZIP 内文件解压到 `ComfyUI/custom_nodes/nano-banana/`（不要多嵌套一层目录），在该目录运行 `python -m pip install -r requirements.txt`，然后重启并刷新。API Token 仍只配在实际启动进程环境中。GitHub ZIP 安装与 Registry/Manager 正式稳定版安装是不同路径。
 
@@ -17,7 +17,7 @@
 
 ## 官方安装
 
-打开官方 [Nano Banana by Ace Data Cloud Registry 页面](https://registry.comfy.org/nodes/nano-banana)，或在 **Manager → Custom Nodes Manager** 搜索 **Nano Banana**；找不到时再搜 **Ace Data Cloud**。选择 **Nano Banana by Ace Data Cloud**，核对发布者 **acedatacloud** 和源码仓库 [`AceDataCloud/NanoBananaComfyUI`](https://github.com/AceDataCloud/NanoBananaComfyUI)，再点击 **Install**。在 **Select Version** 版本对话框明确选择已批准的 Registry 稳定版 **0.1.0**；普通对话框可能默认高亮 **nightly**，本教程不要直接接受该选项。保留依赖自动安装。出现 **Restart Required** 后重启 ComfyUI，并刷新浏览器。Registry ID 为 `nano-banana`。
+打开官方 [Nano Banana Registry 页面](https://registry.comfy.org/nodes/nano-banana)，或在 **Manager → Custom Nodes Manager** 搜索 **Nano Banana**；找不到时再搜 **Ace Data Cloud**。选择 **Nano Banana**，核对发布者 **acedatacloud** 和源码仓库 [`AceDataCloud/NanoBananaComfyUI`](https://github.com/AceDataCloud/NanoBananaComfyUI)，再点击 **Install**。在 **Select Version** 版本对话框明确选择已批准的 Registry 稳定版 **0.1.0**；普通对话框可能默认高亮 **nightly**，本教程不要直接接受该选项。保留依赖自动安装。出现 **Restart Required** 后重启 ComfyUI，并刷新浏览器。Registry ID 为 `nano-banana`。
 
 ![真实 Manager 列表中的本服务节点包](images/manager-discovery.png)
 
